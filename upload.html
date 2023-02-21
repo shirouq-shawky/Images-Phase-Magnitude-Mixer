@@ -1,0 +1,42 @@
+<input type="file"  accept="image/*" name="image" id="file" multiple="multiple"  onchange="loadFile(event)" style="display: none;">
+<p><label for="file" style="cursor: pointer;">Upload 2 Images</label></p>
+<link rel="stylesheet" href="https://unpkg.com/jcrop/dist/jcrop.css">
+<script src="https://unpkg.com/jcrop"></script>
+<div>
+    <img id="img1"/>
+    </div>
+    <div>
+        <img id="img2"/>
+    </div>
+    </body>
+
+<script>
+var loadFile = function(event) {
+    console.log(event.target.files.length);
+    if (event.target.files.length==2  ) {
+ 	var image = document.getElementById('img1');
+	image.src = URL.createObjectURL(event.target.files[0]);
+    var image2 = document.getElementById('img2');
+    image2.src = URL.createObjectURL(event.target.files[1]);
+    const crop1 = Jcrop.attach('img1');
+    crop1.listen('crop.change',(widget,e) => {
+        console.log(widget.pos);
+        });
+    const stage = Jcrop.attach('img2');
+    stage.listen('crop.change',(widget,e) => {
+        console.log(widget.pos);
+        });
+
+} else if (event.target.files.length==1) {
+     	var image = document.getElementById('img1');
+	image.src = URL.createObjectURL(event.target.files[0]);
+    var image2 = document.getElementById('img2');
+    image2.src = URL.createObjectURL(event.target.files[0]);
+  } else {
+  // do nothing 
+
+}
+
+
+};
+</script>
