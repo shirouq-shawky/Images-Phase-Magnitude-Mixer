@@ -30,4 +30,4 @@ if we mix two images and get the phase component of the first one and the magnit
 * Java Script.
 
 ## Demo:
- ![] (https://github.com/shirouq-shawky/Images-Phase-Magnitude-Mixer/blob/main/Images-Phase-Magnitude-Mixer.mp4)
+ ![](https://github.com/shirouq-shawky/Images-Phase-Magnitude-Mixer/blob/main/Images-Phase-Magnitude-Mixer.gif)
